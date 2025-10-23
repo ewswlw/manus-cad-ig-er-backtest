@@ -63,13 +63,16 @@ dmypy.json
 secrets.yaml
 secrets.yml
 
-# Data (keep structure, ignore content)
+# Data (keep structure, allow CSV files)
 data/raw/*
 !data/raw/.gitkeep
+!data/raw/*.csv
 data/processed/*
 !data/processed/.gitkeep
+!data/processed/*.csv
 data/features/*
 !data/features/.gitkeep
+!data/features/*.csv
 data/models/*
 !data/models/.gitkeep
 data/versions/*
