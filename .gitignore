@@ -1,0 +1,160 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv
+.conda/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# Testing
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.hypothesis/
+.ruff_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Environment variables
+.env
+.env.*
+!.env.example
+*.env.local
+*.env.*.local
+secrets.yaml
+secrets.yml
+
+# Data (keep structure, ignore content)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/features/*
+!data/features/.gitkeep
+data/models/*
+!data/models/.gitkeep
+data/versions/*
+!data/versions/.gitkeep
+
+# Models (keep structure, ignore models)
+models/registry/*
+!models/registry/.gitkeep
+!models/registry/*/
+models/experiments/*
+!models/experiments/.gitkeep
+
+# Results
+results/backtests/*
+!results/backtests/.gitkeep
+!results/backtests/*/
+results/live_trading/*
+!results/live_trading/.gitkeep
+!results/live_trading/*/
+results/analysis/*
+!results/analysis/.gitkeep
+!results/analysis/*/
+results/reports/*
+!results/reports/.gitkeep
+!results/reports/*/
+results/trade_blotters/*
+!results/trade_blotters/.gitkeep
+results/visualizations/*
+!results/visualizations/.gitkeep
+
+# Logs
+logs/
+*.log
+*.log.*
+
+# Cache
+cache/
+*.cache
+.cache/
+
+# OS
+Thumbs.db
+.DS_Store
+*.swp
+*.swo
+
+# Documentation build
+docs/_build/
+docs/_static/
+docs/_templates/
+site/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+db/*.sql
+!db/migrations/*.sql
+
+# Temporary files
+*.tmp
+*.temp
+tmp/
+temp/
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Large files
+*.h5
+*.hdf5
+*.parquet
+
+# Secrets and credentials
+*secret*
+*credential*
+*password*
+*.pem
+*.key
+*.crt
+
+# Deployment
+.terraform/
+*.tfstate
+*.tfstate.backup
+

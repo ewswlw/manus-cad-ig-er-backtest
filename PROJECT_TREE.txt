@@ -1,0 +1,55 @@
+.
+├── IMPLEMENTATION_ROADMAP.md
+├── Makefile
+├── PROJECT_SUMMARY.txt
+├── PROJECT_TREE.txt
+├── README.md
+├── config
+│   └── strategy_config.yaml
+├── create_structure.sh
+├── data
+│   ├── features
+│   ├── models
+│   ├── processed
+│   │   └── data_with_all_features.csv
+│   └── raw
+│       └── with_er_daily.csv
+├── docs
+│   ├── MODULAR_PROJECT_PLAN.md
+│   ├── VALIDATION_REPORT.md
+│   └── WEEKLY_VS_MONTHLY_COMPARISON.md
+├── logs
+├── notebooks
+├── requirements.txt
+├── results
+│   ├── backtests
+│   ├── reports
+│   ├── trade_blotters
+│   └── visualizations
+├── scripts
+├── setup.py
+├── src
+│   ├── __init__.py
+│   ├── backtesting
+│   │   └── __init__.py
+│   ├── data
+│   │   └── __init__.py
+│   ├── execution
+│   │   └── __init__.py
+│   ├── features
+│   │   └── __init__.py
+│   ├── models
+│   │   └── __init__.py
+│   ├── strategies
+│   │   └── __init__.py
+│   └── utils
+│       └── __init__.py
+└── tests
+    ├── __init__.py
+    ├── test_backtesting
+    ├── test_data
+    ├── test_features
+    ├── test_models
+    └── test_strategies
+
+29 directories, 23 files

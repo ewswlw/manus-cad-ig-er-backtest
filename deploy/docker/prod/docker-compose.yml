@@ -1,0 +1,77 @@
+version: '3.8'
+
+services:
+  trading-strategy:
+    build:
+      context: ../../..
+      dockerfile: deploy/docker/prod/Dockerfile
+    container_name: cad-ig-trading-prod
+    restart: unless-stopped
+    environment:
+      - ENVIRONMENT=production
+      - LOG_LEVEL=INFO
+    volumes:
+      - ../../../data:/app/data:ro
+      - ../../../models:/app/models:ro
+      - ../../../config:/app/config:ro
+      - ../../../results:/app/results
+      - ../../../logs:/app/logs
+      - ../../../cache:/app/cache
+    networks:
+      - trading-network
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+    deploy:
+      resources:
+        limits:
+          cpus: '2'
+          memory: 4G
+        reservations:
+          cpus: '1'
+          memory: 2G
+
+  # Optional: Monitoring with Prometheus
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    restart: unless-stopped
+    volumes:
+      - ../../../monitoring/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus-data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+    ports:
+      - "9090:9090"
+    networks:
+      - trading-network
+
+  # Optional: Visualization with Grafana
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    restart: unless-stopped
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_USERS_ALLOW_SIGN_UP=false
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ../../../monitoring/dashboards:/etc/grafana/provisioning/dashboards:ro
+    ports:
+      - "3000:3000"
+    networks:
+      - trading-network
+    depends_on:
+      - prometheus
+
+networks:
+  trading-network:
+    driver: bridge
+
+volumes:
+  prometheus-data:
+  grafana-data:
+
