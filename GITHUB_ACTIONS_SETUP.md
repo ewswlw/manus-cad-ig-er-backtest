@@ -1,5 +1,8 @@
 # GitHub Actions Setup Instructions
 
+**Last Updated:** October 23, 2025  
+**Status:** Optional - CI/CD configuration guide
+
 The GitHub Actions workflow files couldn't be pushed automatically due to permission restrictions. Follow these steps to add them manually:
 
 ## Option 1: Add via GitHub Web Interface

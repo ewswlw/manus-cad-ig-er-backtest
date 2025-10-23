@@ -1,7 +1,9 @@
-# CAD-IG Trading Strategy - Visual File Tree
+# CAD-IG Trading Strategy -# Visual File Tree
+
+**Last Updated:** October 23, 2025  
+**Status:** Initial structure (some files now implemented)
 
 ## Complete Project Structure
-
 ```
 cad_ig_trading/
 │
